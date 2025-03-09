@@ -1,0 +1,39 @@
+
+
+function Best_Ant = SelectBestAnt(Archive, Best_Ant_Selection_factor)
+
+    % Grid Index of All Repository Members
+    GI=[Archive.GridIndex];
+    
+    % Occupied Cells
+    OC=unique(GI);
+    
+    % Number of Particles in Occupied Cells
+    N=zeros(size(OC));
+    for k=1:numel(OC)
+        N(k)=numel(find(GI==OC(k)));
+    end
+    
+    % Selection Probabilities
+    P=exp(-Best_Ant_Selection_factor*N);
+    P=P/sum(P);
+    
+    % Selected Cell Index
+    sci=RouletteWheelSelection(P);
+    
+    % Selected Cell
+    sc=OC(sci);
+    
+    % Selected Cell Members
+    SCM=find(GI==sc);
+    
+    % Selected Member Index
+    smi=randi([1 numel(SCM)]);
+    
+    % Selected Member
+    sm=SCM(smi);
+    
+    % Leader
+    Best_Ant=Archive(sm);
+
+end
