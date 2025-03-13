@@ -1,4 +1,9 @@
 # OptimUse
+
+Cite as: Hussein M Ali, Tarik A. Rashid. OptimUse: Can an Open-Source Framework Simplify Optimization?. Authorea. March 13, 2025.
+DOI: 10.22541/au.174189009.95152483/v1
+
+
 Matlab Framework for optimization algorithms, functions, and applications. 
 
 To download the installer package of OptimUse and its test resources, please visit the link  below:
